@@ -5,13 +5,12 @@ using System.Text;
 
 namespace SoftserveProject.Shared.Models {
     [FirestoreData]
-    class Task {
+    class TodoTask {
         public string Id { get; set; }
         [FirestoreProperty]
-        public DateTime createdAt { get; set; }
+        public DateTime CreatedAt { get; set; }
         [FirestoreProperty]
         public string TaskName { get; set; }
-        [FirestoreProperty]
         public string Description { get; set; }
     }
 }
