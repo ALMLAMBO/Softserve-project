@@ -28,27 +28,28 @@ namespace SoftserveProject.Server.DataAccess {
 
             List<TodoTask> todoTasks = new List<TodoTask>();
 
-            try {
-                foreach (DocumentSnapshot ds in 
+            foreach (DocumentSnapshot ds in
                     todoTaskQuerySnapshot.Documents) {
 
-                    if(ds.Exists) {
-                        TodoTask newTodoTask = ds
-                            .ConvertTo<TodoTask>();
+                if (ds.Exists) {
+                    TodoTask newTodoTask = ds
+                        .ConvertTo<TodoTask>();
 
-                        todoTasks.Add(newTodoTask);
-                    }
-
-                    return todoTasks
-                        .OrderBy(x => x.CreatedAt)
-                        .ToList();
+                    todoTasks.Add(newTodoTask);
                 }
-            } 
-            catch {
-                throw;
+
             }
 
-            return todoTasks;
+			return todoTasks
+                   .OrderBy(x => x.CreatedAt)
+                   .ToList();
         }
+
+		public async void AddTodoTask(Task task) {
+			CollectionReference collection = 
+				firestoreDb.Collection("tasks");
+
+			await collection.AddAsync(task);
+		}
     }
 }
