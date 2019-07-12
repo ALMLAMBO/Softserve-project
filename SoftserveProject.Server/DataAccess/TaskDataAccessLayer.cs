@@ -69,11 +69,6 @@ namespace SoftserveProject.Server.DataAccess {
 				.Collection("tasks")
 				.Document(task.Id);
 
-			task.CreatedAt = DateTime.SpecifyKind(
-				DateTime.Now,
-				DateTimeKind.Utc
-			);
-
 			await todoRef
 				.SetAsync(task, SetOptions.Overwrite);
 		}
