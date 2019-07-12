@@ -51,5 +51,42 @@ namespace SoftserveProject.Server.DataAccess {
 
 			await collection.AddAsync(task);
 		}
+
+		public async void UpdateTodoTask(TodoTask task) {
+			DocumentReference todoRef = firestoreDb
+				.Collection("tasks")
+				.Document(task.Id);
+
+			await todoRef
+				.SetAsync(task, SetOptions.Overwrite);
+		}
+
+		public async Task<TodoTask>	GetTodoData(string id) {
+			DocumentReference dr = firestoreDb
+				.Collection("tasks")
+				.Document(id);
+
+			DocumentSnapshot snapshot = await 
+				dr.GetSnapshotAsync();
+
+			if(snapshot.Exists) {
+				TodoTask task = snapshot
+					.ConvertTo<TodoTask>();
+
+				task.Id = snapshot.Id;
+				return task;
+			}
+			else {
+				return new TodoTask();
+			}
+		}
+
+		public async void DeleteTodoTask(string id) {
+			DocumentReference document = firestoreDb
+				.Collection("tasks")
+				.Document(id);
+
+			await document.DeleteAsync();
+		}
     }
 }
