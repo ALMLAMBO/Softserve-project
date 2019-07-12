@@ -17,7 +17,7 @@ namespace SoftserveProject.Server.DataAccess {
             Environment.SetEnvironmentVariable(
                 "GOOGLE_APPLICATION_CREDENTIALS", filepath);
 
-            projectId = "softserve-app";
+            projectId = "softserve-app-5dab0";
             firestoreDb = FirestoreDb.Create(projectId);
         }
 
@@ -35,6 +35,13 @@ namespace SoftserveProject.Server.DataAccess {
                     TodoTask newTodoTask = ds
                         .ConvertTo<TodoTask>();
 
+					newTodoTask.Id = ds.Id;
+					newTodoTask.CreatedAt = ds.CreateTime
+						.Value.ToDateTime();
+
+					Dictionary<string, object> task = ds.ToDictionary();
+					newTodoTask.TaskName = task["TaskName"].ToString();
+
                     todoTasks.Add(newTodoTask);
                 }
 
@@ -45,17 +52,27 @@ namespace SoftserveProject.Server.DataAccess {
                    .ToList();
         }
 
-		public async void AddTodoTask(Task task) {
+		public async void AddTodoTask(TodoTask task) {
 			CollectionReference collection = 
 				firestoreDb.Collection("tasks");
 
-			await collection.AddAsync(task);
+			task.CreatedAt = DateTime.SpecifyKind(
+				DateTime.Now, 
+				DateTimeKind.Utc
+			);
+
+			DocumentReference dr = await collection.AddAsync(task);
 		}
 
 		public async void UpdateTodoTask(TodoTask task) {
 			DocumentReference todoRef = firestoreDb
 				.Collection("tasks")
 				.Document(task.Id);
+
+			task.CreatedAt = DateTime.SpecifyKind(
+				DateTime.Now,
+				DateTimeKind.Utc
+			);
 
 			await todoRef
 				.SetAsync(task, SetOptions.Overwrite);
