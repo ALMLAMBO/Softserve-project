@@ -15,7 +15,7 @@ namespace SoftserveProject.Server.Controllers {
 
 		// GET: api/<controller>
 		[HttpGet]
-		[Route("get")]
+		[Route("get-all-tasks")]
 		public Task<List<TodoTask>> Get() {
 			return taskDAL.GetAllTasks();
 		}
