@@ -108,7 +108,7 @@ app {
     }
 
     .sidebar {
-        width: 250px;
+        width: 300px;
         height: 100vh;
         position: sticky;
         top: 0;
@@ -132,4 +132,104 @@ app {
         /* Never collapse the sidebar for wide screens */
         display: block;
     }
+}
+
+.main-section {
+	width: calc(100% - 300px);
+	height: 100vh;
+	display: inline-block;
+	float: right;
+	padding: 0 25px;
+	background-color: #E3E3E3;
+}
+
+.intro-section {
+	height: 225px;
+	border: 2px solid #C7C7C7;
+	padding: 25px;
+	border-radius: 25px;
+	background: white;
+	width: 70%;
+	margin: 45px auto;
+}
+
+.title {
+	font-size: 48px;
+	font-weight: 900;
+	margin: 20px auto;
+	text-align: center;
+}
+
+.text {
+	word-wrap: break-word;
+	flex-wrap: wrap;
+	text-align: center;
+	font-size: 18px;
+}
+
+.name {
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	margin: 10px auto 25px;
+}
+
+.base-section {
+	height: 350px;
+	padding: 15px 30px;
+	margin: auto;
+}
+
+.left-part {
+	height: 100%;
+	width: 30%;
+	margin: 0 auto;
+	float: left;
+}
+
+.left-part label, .right-part label {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.left-part button {
+	display: block;
+	margin: 10px 0;
+	width: 50%;
+	height: 35px;
+	background: #727272;
+	color: white;
+	border: 1px solid white;
+	border-radius: 5px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.left-part input {
+	height: 35px;
+	border-radius: 5px;
+	outline: none;
+	border: 1px solid grey;
+	width: 100%;
+}
+
+.right-part {
+	width: 45%;
+	float: right;
+	height: 100%;
+}
+
+.right-part .item {
+	border-bottom: 0;
+	background: white;
+	padding: 5px 5px;
+	margin-top: 5px;
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+}
+
+.icons-wrapper {
+	float: right
 }
