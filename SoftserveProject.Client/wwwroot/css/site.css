@@ -100,6 +100,10 @@ app {
     .main .top-row {
         display: none;
     }
+
+	.main-section {
+		flex-direction: row;
+	}
 }
 
 @media (min-width: 768px) {
@@ -177,12 +181,15 @@ app {
 .base-section {
 	height: auto;
 	padding: 15px 30px;
+	display: flex;
+	justify-content: center;
 }
 
 .left-part {
-	height: 100%;
-	width: 30%;
-	margin: 0 auto;
+	height: auto;
+	align-self: auto;
+	margin: 0 65px 0 0;
+	width: 35%;
 	float: left;
 }
 
@@ -215,8 +222,9 @@ app {
 
 .right-part {
 	width: 45%;
+	margin: 0 0 0 20px;
 	float: right;
-	height: 100%;
+	height: auto;
 }
 
 .right-part .item {
