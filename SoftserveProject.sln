@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29021.104
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftserveProject.Server", "SoftserveProject.Server\SoftserveProject.Server.csproj", "{B00443C4-729F-408A-8B40-600A8C4BDDF2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftserveProject.Server", "SoftserveProject.Server\SoftserveProject.Server.csproj", "{B00443C4-729F-408A-8B40-600A8C4BDDF2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftserveProject.Client", "SoftserveProject.Client\SoftserveProject.Client.csproj", "{676780C5-5559-40DD-8E49-449CA08235B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftserveProject.Client", "SoftserveProject.Client\SoftserveProject.Client.csproj", "{676780C5-5559-40DD-8E49-449CA08235B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftserveProject.Shared", "SoftserveProject.Shared\SoftserveProject.Shared.csproj", "{F21199F2-6E1D-446B-864C-76988A2FD2BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftserveProject.Shared", "SoftserveProject.Shared\SoftserveProject.Shared.csproj", "{F21199F2-6E1D-446B-864C-76988A2FD2BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
