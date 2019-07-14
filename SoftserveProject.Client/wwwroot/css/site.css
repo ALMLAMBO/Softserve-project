@@ -108,7 +108,7 @@ app {
     }
 
     .sidebar {
-        width: 300px;
+        width: 400px;
         height: 100vh;
         position: sticky;
         top: 0;
@@ -135,8 +135,8 @@ app {
 }
 
 .main-section {
-	width: calc(100% - 300px);
-	height: 100vh;
+	width: auto;
+	height: auto;
 	display: inline-block;
 	float: right;
 	padding: 0 25px;
@@ -144,12 +144,12 @@ app {
 }
 
 .intro-section {
-	height: 225px;
+	height: auto;
 	border: 2px solid #C7C7C7;
 	padding: 25px;
 	border-radius: 25px;
-	background: white;
-	width: 70%;
+	background: #ffffff;
+	width: 83%;
 	margin: 45px auto;
 }
 
@@ -175,9 +175,8 @@ app {
 }
 
 .base-section {
-	height: 350px;
+	height: auto;
 	padding: 15px 30px;
-	margin: auto;
 }
 
 .left-part {
