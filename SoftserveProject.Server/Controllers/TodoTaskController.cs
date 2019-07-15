@@ -14,8 +14,7 @@ namespace SoftserveProject.Server.Controllers {
 		TaskDataAccessLayer taskDAL = new TaskDataAccessLayer();
 
 		// GET: api/<controller>
-		[HttpGet]
-		[Route("get-all-tasks")]
+		[HttpGet("get-all-tasks")]
 		public Task<List<TodoTask>> Get() {
 			return taskDAL.GetAllTasks();
 		}
@@ -27,15 +26,13 @@ namespace SoftserveProject.Server.Controllers {
 		}
 
 		// POST api/<controller>
-		[HttpPost]
-		[Route("add-task")]
+		[HttpPost("add-task")]
 		public void Post([FromBody]TodoTask task) {
 			taskDAL.AddTodoTask(task);
 		}
 
 		// PUT api/<controller>/5
-		[HttpPut]
-		[Route("update-task")]
+		[HttpPut("update-task")]
 		public void Put([FromBody]TodoTask task) {
 			taskDAL.UpdateTodoTask(task);
 		}
